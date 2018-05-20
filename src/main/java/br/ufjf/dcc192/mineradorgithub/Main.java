@@ -16,6 +16,7 @@ import org.kohsuke.github.PagedIterable;
 public class Main {
 
     private static List<Repositorio> lstRepositorios = new ArrayList<>();
+    private static List<Colaboradores> lstColaboradores = new ArrayList<>();
 
     public static void main(String args[]) throws IOException {
         int i = 0;
@@ -35,11 +36,14 @@ public class Main {
                 System.out.println(colaboradore.getContributions());
                 System.out.println(colaboradore.getEmail());
                 System.out.println(colaboradore.getLocation());
+                lstColaboradores.add(new Colaboradores(colaboradore.getName(), colaboradore.getEmail(),
+                        colaboradore.getContributions(), colaboradore.getLocation()));
             }
 
             lstRepositorios.add(new Repositorio(repositorio.getDescription(),
-                    repositorio.getFullName(), user.getName(), user.getEmail()));
-            i++;
+                    repositorio.getFullName(), user.getName(), user.getEmail(), lstColaboradores));
+
+            lstColaboradores.clear();
         }
         System.out.println("-----------------||----------------");
         for (int a = 0; a < i; a++) {

@@ -1,45 +1,39 @@
-
 package br.ufjf.dcc192.mineradorgithub;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
+import java.util.List;
 /**
  *
  * @author Rian Alves
  */
 public class Repositorio {
-     private String description;
+
+    /**
+     * @return the colaboradores
+     */
+    public List <Colaboradores> getColaboradores() {
+        return colaboradores;
+    }
+
+    /**
+     * @param colaboradores the colaboradores to set
+     */
+    public void setColaboradores(List <Colaboradores> colaboradores) {
+        this.colaboradores = colaboradores;
+    }
+
+    private String description;
     private String fullName;
     private String name;
     private String email;
-    private String clbName;
-    private String clbContib;
-    private String clbEmail;
-    private String clbLocation;
-    private ArrayList<Repositorio> repositorios;
 
-    public Repositorio(String description, String fullName, String name, String email, String clbName, String clbContib, String clbEmail, String clbLocation) {
+    private List<Colaboradores> colaboradores;
+
+    public Repositorio(String description, String fullName, String name, String email,List<Colaboradores> colaboradores) {
         this.description = description;
         this.fullName = fullName;
         this.name = name;
         this.email = email;
-        this.clbName = clbName;
-        this.clbContib = clbContib;
-        this.clbEmail = clbEmail;
-        this.clbLocation = clbLocation;
+        this.colaboradores = colaboradores;
     }
-    
-     public Repositorio(String description, String fullName, String name, String email) {
-        this.description = description;
-        this.fullName = fullName;
-        this.name = name;
-        this.email = email;
-      }
-    
-  
 
     /**
      * @return the description
@@ -97,60 +91,4 @@ public class Repositorio {
         this.email = email;
     }
 
-    /**
-     * @return the clbName
-     */
-    public String getClbName() {
-        return clbName;
-    }
-
-    /**
-     * @param clbName the clbName to set
-     */
-    public void setClbName(String clbName) {
-        this.clbName = clbName;
-    }
-
-    /**
-     * @return the clbContib
-     */
-    public String getClbContib() {
-        return clbContib;
-    }
-
-    /**
-     * @param clbContib the clbContib to set
-     */
-    public void setClbContib(String clbContib) {
-        this.clbContib = clbContib;
-    }
-
-    /**
-     * @return the clbEmail
-     */
-    public String getClbEmail() {
-        return clbEmail;
-    }
-
-    /**
-     * @param clbEmail the clbEmail to set
-     */
-    public void setClbEmail(String clbEmail) {
-        this.clbEmail = clbEmail;
-    }
-
-    /**
-     * @return the clbLocation
-     */
-    public String getClbLocation() {
-        return clbLocation;
-    }
-
-    /**
-     * @param clbLocation the clbLocation to set
-     */
-    public void setClbLocation(String clbLocation) {
-        this.clbLocation = clbLocation;
-    }
-    
 }
