@@ -1,6 +1,11 @@
 
 package br.ufjf.dcc192.mineradorgithub;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Rian Alves
@@ -14,6 +19,7 @@ public class Repositorio {
     private String clbContib;
     private String clbEmail;
     private String clbLocation;
+    private ArrayList<Repositorio> repositorios;
 
     public Repositorio(String description, String fullName, String name, String email, String clbName, String clbContib, String clbEmail, String clbLocation) {
         this.description = description;
@@ -26,7 +32,14 @@ public class Repositorio {
         this.clbLocation = clbLocation;
     }
     
+     public Repositorio(String description, String fullName, String name, String email) {
+        this.description = description;
+        this.fullName = fullName;
+        this.name = name;
+        this.email = email;
+      }
     
+  
 
     /**
      * @return the description
