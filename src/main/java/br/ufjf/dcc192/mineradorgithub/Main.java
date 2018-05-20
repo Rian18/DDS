@@ -20,7 +20,6 @@ public class Main {
             System.out.println(repositorio.getDescription());
             System.out.println(repositorio.getFullName());
             GHUser user = repositorio.getOwner();
-
             System.out.println("Nome: " + user.getName() + " Email:" + user.getEmail());
             PagedIterable<Contributor> colaboradores = repositorio.listContributors();
             for (Contributor colaboradore : colaboradores) {
