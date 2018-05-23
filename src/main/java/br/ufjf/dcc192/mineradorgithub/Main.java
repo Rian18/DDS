@@ -1,5 +1,7 @@
 package br.ufjf.dcc192.mineradorgithub;
 
+import br.ufjf.dcc192.mineradorgithub.Modelos.Repositorio;
+import br.ufjf.dcc192.mineradorgithub.Modelos.Colaboradores;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +25,7 @@ public class Main {
 
         GitHub github = GitHub.connectUsingOAuth("d86d88a950f74c985f055680a28ffab177264607");
         GHRepositorySearchBuilder repo = github.searchRepositories();
-        GHRepositorySearchBuilder repos = repo.q("agropecuaria");
+        GHRepositorySearchBuilder repos = repo.q("Floricultura");
         PagedIterable<GHRepository> repositorios = repos.list();
         for (GHRepository repositorio : repositorios) {
             System.out.println(repositorio.getDescription());
@@ -39,7 +41,7 @@ public class Main {
                 lstColaboradores.add(new Colaboradores(colaboradore.getName(), colaboradore.getEmail(),
                         colaboradore.getContributions(), colaboradore.getLocation()));
             }
-
+            System.out.println("-----------------||----------------");
             lstRepositorios.add(new Repositorio(repositorio.getDescription(),
                     repositorio.getFullName(), user.getName(), user.getEmail(), lstColaboradores));
 

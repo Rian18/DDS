@@ -1,4 +1,5 @@
-package br.ufjf.dcc192.mineradorgithub;
+package br.ufjf.dcc192.mineradorgithub.Modelos;
+import br.ufjf.dcc192.mineradorgithub.Modelos.Colaboradores;
 import java.util.List;
 /**
  *

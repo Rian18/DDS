@@ -1,5 +1,5 @@
 
-package br.ufjf.dcc192.mineradorgithub;
+package br.ufjf.dcc192.mineradorgithub.Modelos;
 
 /**
  *
