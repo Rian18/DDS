@@ -24,6 +24,7 @@
                 <th>Repositório</th>
                 <th>Nome do Usuário</th>
                 <th>E-mail</th>
+                <th>Contribuidores</th>
                 </thead>
                 
                 <tbody>
@@ -33,7 +34,7 @@
                         <td>${repositorio.fullName}</td> 
                         <td>${repositorio.name}</td> 
                         <td>${repositorio.email}</td> 
-                                    
+                                                                               
                     </tr>
                     </c:forEach>
                 </tbody>
