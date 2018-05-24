@@ -9,24 +9,26 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <%@include file="/WEB-INF/jspf/bootstrap.jspf" %>
                <title>Plataforma</title>
     </head>
     <body>
-        <h1>Encontre desenvolvedores e analistas para apoiarem na especificação de um requisito</h1>
-        <form method="post">
-            <label>Insira a palavra chave: <input name="keyword"/></label><br/>
-            <input type="submit"/>
-            <input type="reset"/>
+        <h3>Encontre desenvolvedores e analistas para apoiarem na especificação de um requisito</h3>
+        <form method="post"> 
+            <label>Você poderá inserir o domínio de seu projeto e assim encontrar pessoas capazes de te ajudar   <input class="form-control" type="text" placeholder="Insira aqui a palavra chave" name="keyword"/></label><br/>
+            <input type="submit" class="btn btn-success"/>
+            <input type="reset" class="btn btn-danger"/>
         </form>
 
        <table class="table table-hover">
-                <thead>
-                <th>Repositório</th>
+           <thead>
+                <tr class="table-primary">
+                <th center>Repositório</th>
                 <th>Nome do Usuário</th>
                 <th>E-mail</th>
                 <th>Contribuidores</th>
-                </thead>
-                
+                </tr>
+           </thead>
                 <tbody>
                     <c:forEach var="repositorio" items="${repositorios}">
                     
@@ -34,6 +36,7 @@
                         <td>${repositorio.fullName}</td> 
                         <td>${repositorio.name}</td> 
                         <td>${repositorio.email}</td> 
+                        <td><a href="">Visualizar</a></td> 
                                                                                
                     </tr>
                     </c:forEach>
