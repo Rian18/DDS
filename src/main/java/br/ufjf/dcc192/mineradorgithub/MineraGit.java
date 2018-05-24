@@ -29,6 +29,7 @@ public class MineraGit {
     public List<Repositorio> Operacao(String palavraChave) throws IOException {
 
         Conexao conexao = new Conexao();
+        String url = "";
         GitHub github = conexao.getConexao();
         GHRepositorySearchBuilder repo = github.searchRepositories();
         GHRepositorySearchBuilder repos = repo.q(palavraChave);
@@ -37,6 +38,8 @@ public class MineraGit {
             
             System.out.println(repositorio.getDescription());
             System.out.println(repositorio.getFullName());
+            url = repositorio.getHtmlUrl().toString();
+            System.out.println(url);
             GHUser user = repositorio.getOwner();
             System.out.println("Nome: " + user.getName() + " Email:" + user.getEmail());
             PagedIterable<GHRepository.Contributor> colaboradores = repositorio.listContributors();
@@ -50,7 +53,7 @@ public class MineraGit {
             }
             System.out.println("-----------------||----------------");
             lstRepositorios.add(new Repositorio(repositorio.getDescription(),
-                    repositorio.getFullName(), user.getName(), user.getEmail(), lstColaboradores));
+                    repositorio.getFullName(), user.getName(), user.getEmail(), lstColaboradores,url));
 
             lstColaboradores.clear();
         }

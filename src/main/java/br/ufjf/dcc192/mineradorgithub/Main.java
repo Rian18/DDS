@@ -46,7 +46,7 @@ public class Main {
             }
             System.out.println("-----------------||----------------");
             lstRepositorios.add(new Repositorio(repositorio.getDescription(),
-                    repositorio.getFullName(), user.getName(), user.getEmail(), lstColaboradores));
+                    repositorio.getFullName(), user.getName(), user.getEmail(), lstColaboradores,""));
 
             lstColaboradores.clear();
         }

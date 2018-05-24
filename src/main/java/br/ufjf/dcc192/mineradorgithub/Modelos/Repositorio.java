@@ -25,15 +25,17 @@ public class Repositorio {
     private String fullName;
     private String name;
     private String email;
+    private String url;
 
     private List<Colaboradores> colaboradores;
 
-    public Repositorio(String description, String fullName, String name, String email,List<Colaboradores> colaboradores) {
+    public Repositorio(String description, String fullName, String name, String email,List<Colaboradores> colaboradores,String url) {
         this.description = description;
         this.fullName = fullName;
         this.name = name;
         this.email = email;
         this.colaboradores = colaboradores;
+        this.url = url;
     }
 
     /**
@@ -90,6 +92,20 @@ public class Repositorio {
      */
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    /**
+     * @return the url
+     */
+    public String getUrl() {
+        return url;
+    }
+
+    /**
+     * @param url the url to set
+     */
+    public void setUrl(String url) {
+        this.url = url;
     }
 
 }
