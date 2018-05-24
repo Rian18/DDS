@@ -9,27 +9,28 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <%@include file="/WEB-INF/jspf/bootstrap.jspf" %>
+        <title>Contribuidores</title>
     </head>
     <body>
-        <h1>Contribuidores</h1>
+        <h3>Contribuidores</h3>
         <table class="table table-hover">
            <thead>
                 <tr class="table-primary">
-                    <th><center>Repositório</center></th>
-                    <th><center>Nome do Usuário</center></th>
+                    <th><center>Nome</center></th>
                     <th><center>E-mail</center></th>
-                    <th><center>Contribuidores</center></th>
+                    <th><center>Localização</center></th>
+                    <th><center>Foto</center></th>
                 </tr>
            </thead>
                 <tbody>
-                    <c:forEach var="repositorio" items="${repositorios}">
+                    <c:forEach var="contribuidor" items="${repositorio}">
                     
                     <tr>
-                        <td><a href="${repositorio.url}" target="_blank">${repositorio.fullName}</a></td> 
-                        <td><center>${repositorio.name}</center></td> 
-                        <td><center>${repositorio.email}</center></td> 
-                        <td><center><a href="">Visualizar</a></center></td> 
+                        <td><center>${contribuidor.colaboradores.nome}</center></td> 
+                        <td><center>${contribuidor.colaboradores.email}</center></td> 
+                        <td><center>${contribuidor.colaboradores.localizacao}</center></td> 
+                        <td><center><a href="">Imagem</a></center></td> 
                                                                                
                     </tr>
                     </c:forEach>

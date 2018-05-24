@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Rian Alves
  */
-@WebServlet(name = "RepositorioServlet", urlPatterns = {"/repositorio.html"})
+@WebServlet(name = "RepositorioServlet", urlPatterns = {"/repositorio.html", "/contribuidores.html"})
 public class RepositorioServlet extends HttpServlet {
 
     private List<Repositorio> repositorios;
@@ -26,6 +26,10 @@ public class RepositorioServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if ("/repositorio.html".equals(request.getServletPath())) {
             RequestDispatcher despachante = request.getRequestDispatcher("/WEB-INF/Repositorio.jsp");
+            despachante.forward(request, response);
+        }else 
+         if ("/contribuidores.html".equals(request.getServletPath())) {
+            RequestDispatcher despachante = request.getRequestDispatcher("/WEB-INF/Contribuidores.jsp");
             despachante.forward(request, response);
         }
     }

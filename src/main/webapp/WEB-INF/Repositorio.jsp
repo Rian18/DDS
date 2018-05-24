@@ -36,7 +36,7 @@
                         <td><a href="${repositorio.url}" target="_blank">${repositorio.fullName}</a></td> 
                         <td><center>${repositorio.name}</center></td> 
                         <td><center>${repositorio.email}</center></td> 
-                        <td><center><a href="">Visualizar</a></center></td> 
+                        <td><center><a href="contribuidores.html">Visualizar</a></center></td> 
                                                                                
                     </tr>
                     </c:forEach>
