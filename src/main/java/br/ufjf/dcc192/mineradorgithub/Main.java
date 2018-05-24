@@ -19,9 +19,12 @@ public class Main {
 
     private static List<Repositorio> lstRepositorios = new ArrayList<>();
     private static List<Colaboradores> lstColaboradores = new ArrayList<>();
+    
+    
 
     public static void main(String args[]) throws IOException {
         int i = 0;
+       
 
         GitHub github = GitHub.connectUsingOAuth("d86d88a950f74c985f055680a28ffab177264607");
         GHRepositorySearchBuilder repo = github.searchRepositories();
@@ -54,6 +57,15 @@ public class Main {
 
         }
 
+    }
+    
+    public List<Repositorio> RetornaRepositorios(List<Repositorio> repositorios)
+    {
+     
+        
+        return repositorios;
+    
+    
     }
 }
 
