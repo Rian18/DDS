@@ -24,12 +24,12 @@
                 </tr>
            </thead>
                 <tbody>
-                    <c:forEach var="contribuidor" items="${repositorio}">
+                    <c:forEach var="contribuidor" items="${contribuidores}">
                     
                     <tr>
-                        <td><center>${contribuidor.colaboradores.nome}</center></td> 
-                        <td><center>${contribuidor.colaboradores.email}</center></td> 
-                        <td><center>${contribuidor.colaboradores.localizacao}</center></td> 
+                        <td><center>${contribuidor.nome}</center></td> 
+                        <td><center>${contribuidor.email}</center></td> 
+                        <td><center>${contribuidor.localizacao}</center></td> 
                         <td><center><a href="">Imagem</a></center></td> 
                                                                                
                     </tr>

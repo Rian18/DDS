@@ -20,7 +20,7 @@ public class Repositorio {
     public void setColaboradores(List <Colaboradores> colaboradores) {
         this.colaboradores = colaboradores;
     }
-
+    private long id; 
     private String description;
     private String fullName;
     private String name;
@@ -29,7 +29,8 @@ public class Repositorio {
 
     private List<Colaboradores> colaboradores;
 
-    public Repositorio(String description, String fullName, String name, String email,List<Colaboradores> colaboradores,String url) {
+    public Repositorio(long id,String description, String fullName, String name, String email,List<Colaboradores> colaboradores,String url) {
+        this.id = id;
         this.description = description;
         this.fullName = fullName;
         this.name = name;
@@ -106,6 +107,20 @@ public class Repositorio {
      */
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    /**
+     * @return the id
+     */
+    public long getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(long id) {
+        this.id = id;
     }
 
 }
