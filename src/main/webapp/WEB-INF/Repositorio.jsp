@@ -95,7 +95,7 @@
 <br/>
     <table class="table table-hover">
         <thead>
-            <tr class="table-primary">
+            <tr class="table-success">
                 <th><center>Repositório</center></th>
                 <th><center>Nome do Usuário</center></th>
                 <th><center>E-mail</center></th>

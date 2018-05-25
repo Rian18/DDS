@@ -17,26 +17,39 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Rian Alves
  */
-@WebServlet(name = "RepositorioServlet", urlPatterns = {"/repositorio.html", "/contribuidores.html"})
+@WebServlet(name = "RepositorioServlet", urlPatterns = {"/login.html","/repositorio.html", "/contribuidores.html"})
 public class RepositorioServlet extends HttpServlet {
 
     private List<Repositorio> repositorios;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if ("/repositorio.html".equals(request.getServletPath())) {
-            RequestDispatcher despachante = request.getRequestDispatcher("/WEB-INF/Repositorio.jsp");
-            despachante.forward(request, response);
-        }else 
-         if ("/contribuidores.html".equals(request.getServletPath())) {
-            RequestDispatcher despachante = request.getRequestDispatcher("/WEB-INF/Contribuidores.jsp");
-            despachante.forward(request, response);
+        if (null != request.getServletPath()) switch (request.getServletPath()) {
+            case "/login.html":{
+                RequestDispatcher despachante = request.getRequestDispatcher("/WEB-INF/Login.jsp");
+                despachante.forward(request, response);
+                    break;
+                }
+            case "/repositorio.html":{
+                RequestDispatcher despachante = request.getRequestDispatcher("/WEB-INF/Repositorio.jsp");
+                despachante.forward(request, response);
+                    break;
+                }
+            case "/contribuidores.html":{
+                RequestDispatcher despachante = request.getRequestDispatcher("/WEB-INF/Contribuidores.jsp");
+                despachante.forward(request, response);
+                    break;
+                }
+            default:
+                break;
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+       
         String keyword = request.getParameter("keyword");
+        
         MineraGit mineracao = new MineraGit();
         mineracao.Operacao(keyword);
         repositorios = mineracao.Operacao(keyword);
