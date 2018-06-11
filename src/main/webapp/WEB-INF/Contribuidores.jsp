@@ -14,29 +14,34 @@
         <title>Contribuidores</title>
     </head>
     <body>
-        <h3>Contribuidores</h3>
-        <table class="table table-hover">
-           <thead>
-                <tr class="table-primary">
-                    <th><center>Nome</center></th>
-                    <th><center>E-mail</center></th>
-                    <th><center>Localização</center></th>
-                    <th><center>Foto</center></th>
-                </tr>
-           </thead>
-                <tbody>
-                    <c:forEach var="contribuidor" items="${contribuidores}">
-                    
-                    <tr>
-                        <td><center><a href="${contribuidor.url}" target="_blank">${contribuidor.nome}</center></td> 
-                        <td><center>${contribuidor.email}</center></td> 
-                        <td><center>${contribuidor.localizacao}</center></td> 
-                        <td><center><img src="${contribuidor.imagem_URL}" alt="imagem Usuário" width="64" height="64"></center></td> 
-                                                                               
-                    </tr>
-                    </c:forEach>
-                </tbody>
-                
-            </table>
-    </body>
+        <%@include file="/WEB-INF/jspf/cabecalho.jspf" %>
+        <br/>
+    <center><h3>Contribuidores</h3></center>
+    <center><h6>Você poderá conhecer melhor um pouco dos contribuidores</h6></center>
+
+    <table class="table table-hover">
+        <thead>
+            <tr class="table-primary">
+                <th><center>Nome</center></th>
+    <th><center>E-mail</center></th>
+<th><center>Localização</center></th>
+<th><center>Foto</center></th>
+</tr>
+</thead>
+<tbody>
+    <c:forEach var="contribuidor" items="${contribuidores}">
+
+        <tr>
+            <td><center><a href="${contribuidor.url}" target="_blank">${contribuidor.nome}</center></td> 
+<td><center>${contribuidor.email}</center></td> 
+<td><center>${contribuidor.localizacao}</center></td> 
+<td><center><img src="${contribuidor.imagem_URL}" alt="imagem Usuário" width="64" height="64"></center></td> 
+
+</tr>
+</c:forEach>
+</tbody>
+
+</table>
+<%@include file="/WEB-INF/jspf/rodape.jspf" %>
+</body>
 </html>
