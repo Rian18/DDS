@@ -47,8 +47,9 @@ public class MineraGit {
                 System.out.println(colaboradore.getContributions());
                 System.out.println(colaboradore.getEmail());
                 System.out.println(colaboradore.getLocation());
+                System.out.println(colaboradore.getHtmlUrl());
                 lstColaboradores.add(new Colaboradores(colaboradore.getName(), colaboradore.getEmail(),
-                        colaboradore.getContributions(), colaboradore.getLocation(),colaboradore.getAvatarUrl()));
+                        colaboradore.getContributions(), colaboradore.getLocation(),colaboradore.getHtmlUrl().toString(),colaboradore.getAvatarUrl()));
             }
             System.out.println("-----------------||----------------");
             lstRepositorios.add(new Repositorio(repositorio.getId(), repositorio.getDescription(),

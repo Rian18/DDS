@@ -6,10 +6,25 @@ package br.ufjf.dcc192.mineradorgithub.Modelos;
  * @author Rian Alves
  */
 public class Colaboradores {
+
+    /**
+     * @return the url
+     */
+    public String getUrl() {
+        return url;
+    }
+
+    /**
+     * @param url the url to set
+     */
+    public void setUrl(String url) {
+        this.url = url;
+    }
     private String nome;
     private String email;
     private int contribuicao;
     private String localizacao;
+    private String url;
     private String imagem_URL;
 
     public String getImagem_URL() {
@@ -20,11 +35,12 @@ public class Colaboradores {
         this.imagem_URL = imagem_URL;
     }
 
-    public Colaboradores(String nome, String email, int contribuicao, String localizacao,String imagem_URL) {
+    public Colaboradores(String nome, String email, int contribuicao, String localizacao,String url,String imagem_URL) {
         this.nome = nome;
         this.email = email;
         this.contribuicao = contribuicao;
         this.localizacao = localizacao;
+        this.url = url;
         this.imagem_URL = imagem_URL;
     }
   
