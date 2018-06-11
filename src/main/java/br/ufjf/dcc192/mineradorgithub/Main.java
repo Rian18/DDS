@@ -42,7 +42,7 @@ public class Main {
                 System.out.println(colaboradore.getEmail());
                 System.out.println(colaboradore.getLocation());
                 lstColaboradores.add(new Colaboradores(colaboradore.getName(), colaboradore.getEmail(),
-                        colaboradore.getContributions(), colaboradore.getLocation()));
+                        colaboradore.getContributions(), colaboradore.getLocation(),colaboradore.getAvatarUrl()));
             }
             System.out.println("-----------------||----------------");
             lstRepositorios.add(new Repositorio(repositorio.getId(),repositorio.getDescription(),

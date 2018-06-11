@@ -10,12 +10,22 @@ public class Colaboradores {
     private String email;
     private int contribuicao;
     private String localizacao;
+    private String imagem_URL;
 
-    public Colaboradores(String nome, String email, int contribuicao, String localizacao) {
+    public String getImagem_URL() {
+        return imagem_URL;
+    }
+
+    public void setImagem_URL(String imagem_URL) {
+        this.imagem_URL = imagem_URL;
+    }
+
+    public Colaboradores(String nome, String email, int contribuicao, String localizacao,String imagem_URL) {
         this.nome = nome;
         this.email = email;
         this.contribuicao = contribuicao;
         this.localizacao = localizacao;
+        this.imagem_URL = imagem_URL;
     }
     
     

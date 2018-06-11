@@ -22,10 +22,6 @@ import org.kohsuke.github.PagedIterable;
  */
 public class MineraGit {
 
-    private List<Repositorio> lstRepositorios = new ArrayList<>();
-    
-    private List<Colaboradores> lstColaboradores = new ArrayList<>();
-
     public List<Repositorio> Operacao(String palavraChave) throws IOException {
 
         Conexao conexao = new Conexao();
@@ -34,8 +30,11 @@ public class MineraGit {
         GHRepositorySearchBuilder repo = github.searchRepositories();
         GHRepositorySearchBuilder repos = repo.q(palavraChave);
         PagedIterable<GHRepository> repositorios = repos.list();
+        List<Repositorio> lstRepositorios = new ArrayList<>();
         for (GHRepository repositorio : repositorios) {
-            
+
+            List<Colaboradores> lstColaboradores = new ArrayList<>();
+
             System.out.println(repositorio.getDescription());
             System.out.println(repositorio.getFullName());
             url = repositorio.getHtmlUrl().toString();
@@ -49,13 +48,11 @@ public class MineraGit {
                 System.out.println(colaboradore.getEmail());
                 System.out.println(colaboradore.getLocation());
                 lstColaboradores.add(new Colaboradores(colaboradore.getName(), colaboradore.getEmail(),
-                        colaboradore.getContributions(), colaboradore.getLocation()));
+                        colaboradore.getContributions(), colaboradore.getLocation(),colaboradore.getAvatarUrl()));
             }
             System.out.println("-----------------||----------------");
-            lstRepositorios.add(new Repositorio(repositorio.getId(),repositorio.getDescription(),
-                    repositorio.getFullName(), user.getName(), user.getEmail(), lstColaboradores,url));
-
-            lstColaboradores.clear();
+            lstRepositorios.add(new Repositorio(repositorio.getId(), repositorio.getDescription(),
+                    repositorio.getFullName(), user.getName(), user.getEmail(), lstColaboradores, url));
         }
 
         return lstRepositorios;

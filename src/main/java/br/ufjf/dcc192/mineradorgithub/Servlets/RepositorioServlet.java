@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.kohsuke.github.GHRepository;
 
 /**
  *
@@ -36,6 +37,9 @@ public class RepositorioServlet extends HttpServlet {
                     break;
                 }
             case "/contribuidores.html":{
+                Integer idRepositorio = Integer.parseInt(request.getParameter("repo"));
+                Repositorio repositorio = this.findById(idRepositorio);
+                request.setAttribute("contribuidores", repositorio.getColaboradores());
                 RequestDispatcher despachante = request.getRequestDispatcher("/WEB-INF/Contribuidores.jsp");
                 despachante.forward(request, response);
                     break;
@@ -57,6 +61,15 @@ public class RepositorioServlet extends HttpServlet {
         request.setAttribute("repositorios", repositorios);
         dispacher.forward(request, response);
 
+    }
+    
+    public Repositorio findById(Integer codigoRepositorio) {
+        for (Repositorio repositorio : repositorios) {
+            if (repositorio.getId() == codigoRepositorio) {
+                return repositorio;
+            }
+        }
+        return null;
     }
 
 }
