@@ -1,6 +1,5 @@
 package br.ufjf.dcc192.mineradorgithub.Servlets;
 
-import br.ufjf.dcc192.mineradorgithub.Main;
 import br.ufjf.dcc192.mineradorgithub.MineraGit;
 import br.ufjf.dcc192.mineradorgithub.Modelos.Repositorio;
 import java.io.IOException;
@@ -33,6 +32,11 @@ public class RepositorioServlet extends HttpServlet {
                 }
             case "/repositorio.html":{
                 RequestDispatcher despachante = request.getRequestDispatcher("/WEB-INF/Repositorio.jsp");
+                despachante.forward(request, response);
+                    break;
+                }
+            case "/perfil.html":{
+                RequestDispatcher despachante = request.getRequestDispatcher("/WEB-INF/Perfil.jsp");
                 despachante.forward(request, response);
                     break;
                 }

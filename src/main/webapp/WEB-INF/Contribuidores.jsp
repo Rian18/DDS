@@ -17,7 +17,7 @@
         <%@include file="/WEB-INF/jspf/cabecalho.jspf" %>
         <br/>
     <center><h3>Contribuidores</h3></center>
-    <center><h6>Você poderá conhecer melhor um pouco dos contribuidores</h6></center>
+    <center><h6>Você poderá conhecer melhor um pouco dos contribuidores do Repositório escolhido</h6></center>
 
     <table class="table table-hover">
         <thead>
