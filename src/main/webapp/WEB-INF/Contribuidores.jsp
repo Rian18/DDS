@@ -33,7 +33,7 @@
 
         <tr>
             <td><center><a href="${contribuidor.url}" target="_blank">${contribuidor.nome}</center></td> 
-<td><center>${contribuidor.email}</center></td> 
+<td><center><a href="mailto:${contribuidor.email}" target="_blank">${contribuidor.email}</center></td> 
 <td><center>${contribuidor.localizacao}</center></td> 
 <td><center><img src="${contribuidor.imagem_URL}" alt="imagem Usuário" width="64" height="64"></center></td> 
 
