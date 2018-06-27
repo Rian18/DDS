@@ -27,7 +27,8 @@
                     </div>
                     <div class="col">
 
-                        <input class="form-control form-control-sm" type="text" placeholder="Insira aqui a palavra chave para sua busca" name="keyword"/>               
+                        <input class="form-control form-control-sm" type="text" placeholder="Insira aqui a palavra chave para sua busca" name="keyword"/> 
+
 
                     </div>
                     <div class="col">

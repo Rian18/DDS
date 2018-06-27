@@ -14,7 +14,7 @@ public class Conexao {
         
         public GitHub getConexao() throws IOException{
             if(gitHub==null){
-                gitHub=GitHub.connectUsingOAuth("5bb314454142a2f4b533ce99997cfe4ca064eea4");
+                gitHub=GitHub.connectUsingOAuth("aa41cce249e70354ff23801c50282b6e5d25ec97");
             }
             return gitHub;
         }
