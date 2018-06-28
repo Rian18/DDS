@@ -19,7 +19,7 @@ import org.kohsuke.github.GHRepository;
  *
  * @author Rian Alves
  */
-@WebServlet(name = "RepositorioServlet", urlPatterns = {"/login.html", "/repositorio.html", "/contribuidores.html"})
+@WebServlet(name = "RepositorioServlet", urlPatterns = {"/login.html","/perfil.html", "/repositorio.html", "/contribuidores.html"})
 public class RepositorioServlet extends HttpServlet {
 
     private List<Repositorio> repositorios;

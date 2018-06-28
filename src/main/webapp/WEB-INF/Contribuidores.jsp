@@ -13,6 +13,7 @@
         <%@include file="/WEB-INF/jspf/bootstrap.jspf" %>
 
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        
         <script type="text/javascript">
             var dados = <%=request.getAttribute("colaboradoresJson")%>;
             google.charts.load("current", {packages: ["corechart"]});
@@ -94,7 +95,7 @@
             button.onclick = function () {
                 current = 1 - current;
                 drawChart();
-            }
+            };
         </script>
 
         <title>Contribuidores</title>
@@ -111,18 +112,18 @@
         <thead>
             <tr class="table-primary">
                 <th><center>Nome</center></th>
-    <th><center>E-mail</center></th>
-<th><center>Localização</center></th>
-<th><center>Foto</center></th>
-</tr>
-</thead>
+                <th><center>E-mail</center></th>
+                <th><center>Localização</center></th>
+                <th><center>Foto</center></th>
+            </tr>
+        </thead>
 <tbody>
     <c:forEach var="contribuidor" items="${contribuidores}">
         <tr>
             <td><center><a href="${contribuidor.url}" target="_blank">${contribuidor.nome}</center></td> 
-<td><center><a href="mailto:${contribuidor.email}" target="_blank">${contribuidor.email}</center></td> 
-<td><center>${contribuidor.localizacao}</center></td> 
-<td><center><img src="${contribuidor.imagem_URL}" alt="imagem Usuário" width="64" height="64"></center></td> 
+            <td><center><a href="mailto:${contribuidor.email}" target="_blank">${contribuidor.email}</center></td> 
+            <td><center>${contribuidor.localizacao}</center></td> 
+            <td><center><img src="${contribuidor.imagem_URL}" alt="imagem Usuário" width="64" height="64"></center></td> 
 
 </tr>
 </c:forEach>

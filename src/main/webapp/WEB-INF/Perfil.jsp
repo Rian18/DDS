@@ -25,7 +25,7 @@
                     
                     <div class="form-group">
                     <label>Fale um pouco sobre você e seus Projetos: </label>    
-                        <input class="form-control" type="text" placeholder="Insira aqui o seu Facebbok para vocês se aproximarem" name="minimo"/><br/>
+                        <input class="form-control" type="text" placeholder="Insira aqui o seu Facebook para vocês se aproximarem" name="minimo"/><br/>
                     </div>
                     
                     <div class="form-group">
