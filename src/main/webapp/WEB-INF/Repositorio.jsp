@@ -11,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@include file="/WEB-INF/jspf/bootstrap.jspf" %>
 
-        <title>Plataforma</title>
+        <title>Minera Git - Busca GitHub</title>
 
         <script type="text/javascript" src="C:\Users\Rian Alves\Desktop\Envio3\DDS\src\main\webapp\WEB-INF\VivaGraphJS-master\dist\vivagraph.js"></script>
         <script type="text/javascript">
@@ -60,8 +60,22 @@
         <style type="text/css" media="screen">
             html, body, svg { width: 100%; height: 100%;}
         </style>
+        <script type="text/javascript">
+            var progresso = new Number();
+            var maximo = new Number();
+            progresso = 0;
+            maximo = 100;
+                function start(){
+                    if((progresso + 1)< maximo){
+                        progresso = progresso + 1;
+                        document.getElementById("pg").value=progresso;
+                        setTimeout("start();",1000);
+                        
+                    }
+                }
+        </script>
     </head>
-    <body onload="main()">
+    <body onload="start();">
         <%@include file="/WEB-INF/jspf/cabecalho.jspf" %>
         <br/>
 
@@ -102,6 +116,10 @@
 
             </form>
             <br/>
+            <div id="pg" class="progress">
+                <div class="progress-bar bg-info" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <br/>
             <table class="table table-hover">
                 <thead>
                     <tr class="table-success">
@@ -117,11 +135,11 @@
                         <tr>
                             <td><a href="${repositorio.url}" target="_blank">${repositorio.fullName}</a></td> 
                             <td><center>${repositorio.name}</center></td> 
-                    <td><center>${repositorio.email}</center></td> 
-                    <td><center><a href="contribuidores.html?repo=${repositorio.id}">Visualizar</a></center></td> 
+                            <td><center>${repositorio.email}</center></td> 
+                            <td><center><a href="contribuidores.html?repo=${repositorio.id}">Visualizar</a></center></td> 
 
-                    </tr>
-                </c:forEach>
+                        </tr>
+                     </c:forEach>
                 </tbody>
 
             </table>

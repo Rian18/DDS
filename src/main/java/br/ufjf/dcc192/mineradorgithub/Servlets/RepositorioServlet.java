@@ -19,7 +19,7 @@ import org.kohsuke.github.GHRepository;
  *
  * @author Rian Alves
  */
-@WebServlet(name = "RepositorioServlet", urlPatterns = {"/login.html","/perfil.html", "/repositorio.html", "/contribuidores.html"})
+@WebServlet(name = "RepositorioServlet", urlPatterns = {"/login.html","/index.html","/perfil.html", "/repositorio.html", "/contribuidores.html"})
 public class RepositorioServlet extends HttpServlet {
 
     private List<Repositorio> repositorios;
@@ -30,6 +30,11 @@ public class RepositorioServlet extends HttpServlet {
             switch (request.getServletPath()) {
                 case "/login.html": {
                     RequestDispatcher despachante = request.getRequestDispatcher("/WEB-INF/Login.jsp");
+                    despachante.forward(request, response);
+                    break;
+                }
+                case "/index.html": {
+                    RequestDispatcher despachante = request.getRequestDispatcher("/WEB-INF/index.jsp");
                     despachante.forward(request, response);
                     break;
                 }
